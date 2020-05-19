@@ -1,0 +1,57 @@
+<ion-app>
+ 
+    <ion-menu contentId="my-content">
+      <ion-header>
+       <ion-toolbar color="danger">
+          <ion-title slot="start">Menu</ion-title>
+       </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle [autoHide]="true">
+            <ion-item [button]="true" [routerLink]="['/tabs/tab1']" routerLinkActive="router-link-active">
+              <ion-icon name="home" size="large"></ion-icon>
+              <ion-label class="ion-padding-start">Home</ion-label>
+            </ion-item>
+            <ion-item [button]="true" [routerLink]="['/symptoms']" routerLinkActive="router-link-active">
+              <ion-icon name="body" size="large"></ion-icon>
+              <ion-label class="ion-padding-start">Symptoms</ion-label>
+            </ion-item>
+            <ion-item [button]="true" [routerLink]="['/faqs']" routerLinkActive="router-link-active">
+                <ion-icon name="help-circle" size="large"></ion-icon>
+                <ion-label class="ion-padding-start">FAQ's</ion-label>
+            </ion-item>
+            <ion-item [button]="true" [routerLink]="['/prevention']" routerLinkActive="router-link-active">
+              <ion-icon name="hand-right" size="large"></ion-icon>
+              <ion-label class="ion-padding-start">Prevention</ion-label>
+            </ion-item>
+            <ion-item [button]="true" [routerLink]="['/about']" routerLinkActive="router-link-active">
+                <ion-icon name="information-circle" size="large"></ion-icon>
+                <ion-label class="ion-padding-start">About</ion-label>
+            </ion-item>
+            <ion-row class="ion-no-margin ion-no-padding">
+              <ion-col class="ion-no-margin ion-no-padding">
+                <ion-img src="https://www.vectorkhazana.com/assets/images/products/Covid-19-coronavirus.jpg" style="margin: 0px auto;object-fit: cover;height:170px;">
+                </ion-img>
+                <ion-text class="ion-text-end" color="dark"><p><small>Developed By <b>TEJ PATEL</b></small></p></ion-text>
+              </ion-col>
+              <a href="https://github.com/TEJPPATEL?tab=projects">
+              <ion-col class="ion-text-center"><ion-button color="dark" class="ion-no-margin">
+                <ion-icon size="large" name="logo-github" class="ion-padding"></ion-icon><small>Open Source On Github</small>
+              </ion-button></ion-col>
+              </a>
+            </ion-row>
+         
+
+            </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+      <ion-router-outlet id="my-content"></ion-router-outlet>
+    </ion-menu>
+     <ion-router-outlet></ion-router-outlet>
+
+  <!-- </ion-split-pane> -->
+
+ <!-- <app-header [headername]="header_name"></app-header> -->
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+</ion-app>

@@ -1,0 +1,41 @@
+<ngx-spinner bdColor="rgba(255,255,255,0.3)" size="medium" color="#eb445a" type="ball-scale-multiple"></ngx-spinner>
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ stateName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-margin-right ion-padding-right">
+    <ion-col class="ion-padding-right ion-margin-right"
+      style="display: flex;justify-content: center;flex-direction: column;align-items: center;">
+      <canvas id="PieChart" width="400" height="400" #canPieState></canvas>
+      <!-- <div id="piechart" style="height: 100vh;width:80%" ></div> -->
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-md="10" offset-md="1" size-lg="8" offset-lg="2" size-sm="12" offset-sm="0">
+      <canvas id="BarChart" height="500" #canBarState></canvas>
+      <!-- <div id="piechart"></div> -->
+    </ion-col>
+  </ion-row>
+  <br>
+
+
+  <!-- <div id="regions_div" style="width: 900px; height: 500px;"></div> -->
+  <!-- <highcharts-chart id="container" [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+    [callbackFunction]="chartCallback" [(update)]=updateFromInput [oneToOne]="true"
+    style="width: 100%; height: 400px; display: block;">
+  </highcharts-chart> -->
+  <!-- Above Graph is important to load indian graph -->
+<!--  
+      <highcharts-chart id="container" [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+        [callbackFunction]="chartCallback" [(update)]=updateFromInput [oneToOne]="true"
+        style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart> -->
+<!-- <google-chart type="Gauge" [data]="myData" [options]="myOptions"></google-chart> -->
+  <!-- <app-districtsummarycard></app-districtsummarycard> -->
+</ion-content>

@@ -1,0 +1,128 @@
+<ngx-spinner bdColor="rgba(255,255,255,0.3)" size="medium" color="#eb445a" type="ball-scale-multiple"></ngx-spinner>
+<ion-row class="ion-no-padding-top ion-no-margin-top">
+  <ion-col class="ion-no-padding-top ion-no-margin-top">
+  
+<ion-list>
+  <ion-item color="danger">
+    <ion-label>Selected Country</ion-label>
+    <ion-select value="in" placeholder="Select One" (ionChange)="clicked($event)">
+      
+    <ion-select-option value="ar">Argentina</ion-select-option>
+    <ion-select-option value="au">Australia</ion-select-option>
+    <ion-select-option value="br">Brazil</ion-select-option>
+    <ion-select-option value="ca">Canada</ion-select-option>
+    <ion-select-option value="ch">China</ion-select-option>
+    <ion-select-option value="co">Colombia</ion-select-option>
+
+    <ion-select-option value="cu">Cuba</ion-select-option>
+    <ion-select-option value="eg">Egypt</ion-select-option>
+    <ion-select-option value="fr">France</ion-select-option>
+    <ion-select-option value="ge">Germany</ion-select-option>
+    <ion-select-option value="in">India</ion-select-option>
+    <ion-select-option value="id">Indonesia</ion-select-option>
+
+    <ion-select-option value="tr">Turkey</ion-select-option>
+    <ion-select-option value="ae">UAE</ion-select-option>
+    <ion-select-option value="gb">United Kingdom</ion-select-option>
+    <ion-select-option value="us">United State</ion-select-option>
+        </ion-select>
+  </ion-item>
+
+</ion-list>
+  </ion-col>
+  </ion-row>
+<!-- 
+<ion-item class="ion-margin">
+  <ion-input type="search" placeholder="Select Country"><ion-icon name="search" class="ion-margin"></ion-icon></ion-input>
+</ion-item> -->
+<ion-row *ngFor = "let new of news">
+  <ion-col size-md="6" offset-md="3">
+<ion-card class="ion-no-padding-top ion-no-margin-top"  color="light">
+<ion-row class="ion-no-padding" height="80">
+  <ion-col class="ion-no-padding">
+    <ion-img style="height: 300px;width:100%;object-fit: fill;" [src]="new.urlToImage"></ion-img>
+  </ion-col>
+</ion-row>
+  <ion-card-header>
+  
+    <ion-card-subtitle>{{ new.publishedAt }}</ion-card-subtitle>
+    <ion-card-title>{{new.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+   {{ new.description }}
+  </ion-card-content>
+</ion-card>
+
+</ion-col>
+</ion-row>
+<!-- <h1 *ngIf="news.length === 0">Hii</h1> -->
+
+<!-- 
+  <div *ngIf="!data">
+  <div class="ion-padding custom-skeleton">
+    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    <ion-skeleton-text animated></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+  </div>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-skeleton-text animated style="width: 27px; height: 27px" slot="start"></ion-skeleton-text>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div> -->
+
+
+
+  

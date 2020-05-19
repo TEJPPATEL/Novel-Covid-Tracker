@@ -1,0 +1,190 @@
+<ngx-spinner bdColor="rgba(255,255,255,0.3)" size="medium" color="#eb445a" type="ball-scale-multiple"></ngx-spinner>
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <sup>Novel</sup> COVID <sub>Tracker</sub>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+
+
+
+
+  <!-- <div id="container"></div> -->
+
+  <!-- Segment with default selection -->
+  
+      <ion-toolbar position="top" slot="fixed" class="ion-no-padding ion-no-margin">
+       <ion-segment value="State" (ionChange)="segmentChanged($event)" color="danger">
+      <ion-segment-button value="District">
+        <ion-label>District</ion-label>
+      </ion-segment-button>
+        <ion-segment-button value="State">
+          <ion-label >State</ion-label>
+        </ion-segment-button>
+        
+        <ion-segment-button value="Worldwide">
+          <ion-label>Worldwide</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      </ion-toolbar>
+      
+      <ion-slides style="padding-top:32px" class="ion-padding-top ion-margin-top" #casesslide pager="true" [options]="slideOpts">
+            <ion-slide class="ion-no-padding ion-no-margin">
+              <ion-card style="width: 100vw;">
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-text><strong>Indian Confirmed cases</strong></ion-text>
+                    <ion-text color="danger">
+                      <h1 class="ion-no-padding">{{ confirmedCases | number}}</h1>
+                    </ion-text>
+                    <ion-text class="ion-no-padding ion-no-margin"> <strong>People</strong></ion-text>
+                  </ion-col>
+                  <ion-col size="2">
+                    <ion-icon color="danger" name="snow-outline" style="height: 100px;width:100px"></ion-icon>
+                    <!-- <canvas id="myChart" width="100" height="100" #canvasRef></canvas> -->
+                  </ion-col>
+                </ion-row>
+          
+              </ion-card>
+          
+            </ion-slide>
+            <ion-slide class="ion-no-padding ion-no-margin">
+              <ion-card style="width: 100vw;">
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-text><strong>Indian Active cases</strong></ion-text>
+                    <ion-text color="primary">
+                      <h1 class="ion-no-padding">{{ activeCases | number}}</h1>
+                    </ion-text>
+                    <ion-text class="ion-no-padding ion-no-margin"> <strong>People</strong></ion-text>
+                  </ion-col>
+                  <ion-col size="2">
+                    <ion-icon color="primary" name="snow-outline" style="height: 100px;width:100px"></ion-icon>
+                    <!-- <canvas id="myChart" width="100" height="100" #canvasRef></canvas> -->
+                  </ion-col>
+                </ion-row>
+          
+              </ion-card>
+          
+            </ion-slide>
+            <ion-slide class="ion-no-padding ion-no-margin">
+              <ion-card style="width: 100vw;">
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-text><strong>Indian Recovered cases</strong></ion-text>
+                    <ion-text color="success">
+                      <h1 class="ion-no-padding">{{ recoverCases | number}}</h1>
+                    </ion-text>
+                    <ion-text class="ion-no-padding ion-no-margin"> <strong>People</strong></ion-text>
+                  </ion-col>
+                  <ion-col size="2">
+                    <ion-icon color="success" name="snow-outline" style="height: 100px;width:100px"></ion-icon>
+                    <!-- <canvas id="myChart" width="100" height="100" #canvasRef></canvas> -->
+                  </ion-col>
+                </ion-row>
+          
+              </ion-card>
+          
+            </ion-slide>
+            <ion-slide class="ion-no-padding ion-no-margin">
+              <ion-card style="width: 100vw;">
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-text><strong>Indian Death cases</strong></ion-text>
+                    <ion-text color="medium">
+                      <h1 class="ion-no-padding">{{ deathCases | number }}</h1>
+                    </ion-text>
+                    <ion-text class="ion-no-padding ion-no-margin"> <strong>People</strong></ion-text>
+                  </ion-col>
+                  <ion-col size="2">
+                    <ion-icon color="medium" name="snow-outline" style="height: 100px;width:100px"></ion-icon>
+                    <!-- <canvas id="myChart" width="100" height="100" #canvasRef></canvas> -->
+                  </ion-col>
+                </ion-row>
+          
+              </ion-card>
+          
+            </ion-slide>
+        </ion-slides>
+          
+         
+          
+  <div [ngSwitch]="whichPage">
+    <ion-row *ngSwitchCase="'District'">
+      <ion-col>
+        <app-districtsummarycard></app-districtsummarycard>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngSwitchCase="'State'">
+      <ion-col>
+        <app-statesummarycard></app-statesummarycard>
+      </ion-col>
+    </ion-row>
+   
+    <ion-row *ngSwitchCase="'Worldwide'">
+      <ion-col>
+        <app-countriessummarycard></app-countriessummarycard>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+<!-- 
+  <ion-row class="ion-padding-start">
+    <ion-col size="6"> -->
+<!-- 
+      <ion-list>
+        <ion-list-header>
+          <ion-label>
+            StateWise
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item size="12">
+          <ion-label>State</ion-label>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+
+      </ion-list> -->
+      <!-- <ion-text>
+        <h5><strong>Gujarat</strong></h5>
+      </ion-text>
+    </ion-col>
+    <ion-col size="6" class="ion-text-end">
+      <ion-chip>
+        <ion-label>
+          <h5><strong>Regional</strong></h5>
+        </ion-label>
+      </ion-chip>
+    </ion-col>
+  </ion-row> -->
+
+
+  <!-- <app-statesummarycard></app-statesummarycard>
+
+  <p>chart</p> -->
+  <!-- <app-countriessummarycard></app-countriessummarycard> -->
+  <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>

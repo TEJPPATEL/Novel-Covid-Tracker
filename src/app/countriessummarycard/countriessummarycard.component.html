@@ -1,0 +1,91 @@
+<ngx-spinner bdColor="rgba(255,255,255,0.3)" size="medium" color="#eb445a" type="ball-scale-multiple"></ngx-spinner>
+  <!-- <ion-item>
+    <ion-thumbnail slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-thumbnail>
+    <ion-label>Item Thumbnail</ion-label>
+ 
+    <ion-label>ion-item in a card, icon left, button right</ion-label>
+    <ion-button fill="outline" slot="end">View</ion-button>
+  </ion-item> -->
+  
+<!--   
+  <ion-row class="ion-no-padding ion-no-margin">
+    <ion-col>
+      <ion-item>
+        <ion-input class="danger" [(ngModel)]="searchText" placeholder="Search By Country (i.e = India)"></ion-input>
+        <ion-icon class="danger" name="search"></ion-icon>
+      </ion-item>
+    </ion-col>
+  </ion-row> -->
+
+  <!-- <ion-row class="ion-margin-right ion-padding-right">
+    <ion-col class="ion-padding-right ion-margin-right"
+      style="display: flex;justify-content: center;flex-direction: column;align-items: center;">
+   <fusioncharts
+    [type]="type"
+    [width]="width"
+    [height]="height"
+    [dataFormat]="dataFormat"
+    [dataSource]="dataSource"></fusioncharts> -->
+      <!-- <google-chart type="GeoChart" [data]="myData" [options]="myOptions"></google-chart> -->
+    <!-- </ion-col>
+  </ion-row> -->
+<ion-row class="ion-no-margin ion-no-padding">
+  <ion-col>
+    <ion-item>
+      <ion-input class="danger" [(ngModel)]="searchText" placeholder="Search By Country (i.e = India)"></ion-input>
+      <ion-icon class="danger" name="search"></ion-icon>
+    </ion-item>
+  </ion-col>
+</ion-row>
+  <ion-card *ngFor="let csd of countrysummarydata | countryfilter:searchText" button="true" [routerLink]="['/country-details',csd.country]" routerLinkActive="router-link-active" >
+      <ion-row class="">
+        <ion-col class="ion-text-center">
+         <strong>{{csd.country}}</strong>
+        </ion-col>
+      
+      </ion-row>
+  <ion-row class="ion-no-margin">
+    <ion-col size="2" class="ion-no-margin">
+    <ion-avatar>
+      <img [src]="csd.countryInfo.flag">
+    </ion-avatar>
+    <!-- <small class="ion-no-margin">{{csd.country}}</small> -->
+      <!-- <small class="ion-no-margin">{{csd.country}}</small> -->
+    <!-- <ion-label class="ion-padding ion-padding-top"><strong>{{csd.country}}</strong></ion-label> -->
+    </ion-col>
+    <!-- <ion-col class="ion-margin-top" size="3">
+      <ion-label><strong>India</strong></ion-label>
+    </ion-col> -->
+    <ion-col class="ion-no-margin ion-padding-top">
+      <ion-row>
+        <ion-col class="ion-text-center" style="margin-left:5px">
+          <p class="ion-no-padding ion-no-margin"> <strong>Confirmed</strong></p>
+          <p class="ion-no-padding ion-no-margin"><strong>{{csd.cases | number}}</strong></p>
+        </ion-col>
+        <ion-col  class="ion-text-center">
+        <p class="ion-no-padding ion-no-margin"> <strong>Active</strong></p>
+        <p class="ion-no-padding ion-no-margin"> <strong>{{csd.active | number}}</strong></p>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <p class="ion-no-padding ion-no-margin"> <strong>Recovered</strong></p>
+          <p class="ion-no-padding ion-no-margin"> <strong>{{csd.recovered | number}}</strong></p>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <p class="ion-no-padding ion-no-margin"> <strong>Death</strong></p>
+          <p class="ion-no-padding ion-no-margin"> <strong>{{csd.deaths | number}}</strong></p>
+        </ion-col>
+        <!-- <ion-button class="ion-no-padding ion-no-margin" fill="none">
+          <ion-icon class="ion-text-center" name="chevron-forward-outline"></ion-icon>
+          </ion-button> -->
+      </ion-row>
+    </ion-col>
+    </ion-row>
+    <br>
+    </ion-card>
+    <!-- (click)="onCountryClick() -->
+  <!-- <ion-card-content>
+    This is content, without any paragraph or header tags,
+    within an ion-card-content element.
+  </ion-card-content> -->

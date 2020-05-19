@@ -1,0 +1,5 @@
+ ion-item {
+     --ion-item-border-color: #eb445a;
+     // patch: i need this to override md mode.
+     --border-color: #eb445a;
+ }
